@@ -78,7 +78,7 @@ const Login = () => {
             <button type='submit' className='btn-primary'>Login</button>
             <p className='text-[13px] text-slate-800 my-3'>Don't have an account?{" "}
               <Link className="font-medium text-purple-500 underline" to="/signup">
-              Login</Link>
+              SignUp</Link>
             </p>
           </form>
       </div>
