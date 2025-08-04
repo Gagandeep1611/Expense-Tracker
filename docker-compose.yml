@@ -1,0 +1,48 @@
+services:
+  backend-dev:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile.backend
+      target: dev
+    ports:
+      - "8000:8000"
+    environment:
+      - NODE_ENV=development
+    env_file:
+      - ./backend/.env
+
+  frontend-dev:
+    build:
+      context: .
+      dockerfile: frontend/Dockerfile.frontend
+      target: dev
+    ports:
+      - "5173:5173"
+    environment:
+      - REACT_APP_API_URL=http://backend-dev:8000
+    depends_on:
+      - backend-dev
+
+  backend-prod:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile.backend
+      target: prod
+    ports:
+      - "8000:8000"
+    environment:
+      - NODE_ENV=production
+    env_file:
+      - ./backend/.env
+
+  frontend-prod:
+    build:
+      context: .
+      dockerfile: frontend/Dockerfile.frontend
+      target: prod
+    ports:
+      - "5173:80"
+    environment:
+      - REACT_APP_API_URL=http://backend-prod:8000
+    depends_on:
+      - backend-prod
