@@ -24,6 +24,7 @@ services:
       - backend-dev
 
   backend-prod:
+    container_name: backend-prod
     build:
       context: .
       dockerfile: backend/Dockerfile.backend
@@ -46,3 +47,8 @@ services:
       - REACT_APP_API_URL=http://backend-prod:8000
     depends_on:
       - backend-prod
+
+
+  networks:
+    default:
+      name: expense-network
