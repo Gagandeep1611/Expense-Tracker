@@ -2,7 +2,7 @@ import User from "../models/User.js";
 import Income from "../models/Income.js";
 import xlsx from "xlsx";
 //Add income source
-exports.addIncome = async (req, res) => {
+export const addIncome = async (req, res) => {
     const userId = req.user.id;
 
     try{
@@ -27,7 +27,7 @@ exports.addIncome = async (req, res) => {
 }
 
 //Get all income source
-exports.getAllIncome = async (req, res) => {
+export const getAllIncome = async (req, res) => {
     const userId = req.user.id;
 
     try{
@@ -39,7 +39,7 @@ exports.getAllIncome = async (req, res) => {
 };
 
 //Delete income source
-exports.downloadIncomeExcel = async (req, res) => {
+export const downloadIncomeExcel = async (req, res) => {
     const userId = req.user.id;
     try{
         const income = await Income.find({userId}).sort({date: -1});
@@ -62,7 +62,7 @@ exports.downloadIncomeExcel = async (req, res) => {
 }
 
 //Download Excel
-exports.deleteIncome = async (req, res) => {
+export const deleteIncome = async (req, res) => {
     try{
         await Income.findByIdAndDelete(req.params.id);
         res.json({message: "Income Deleted Successfully"});

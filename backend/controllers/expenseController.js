@@ -3,7 +3,7 @@ import Expense from "../models/Expense.js";
 import xlsx from "xlsx";
 
 //Add expense category
-exports.addExpense = async (req, res) => {
+export const addExpense = async (req, res) => {
     const userId = req.user.id;
 
     try{
@@ -28,7 +28,7 @@ exports.addExpense = async (req, res) => {
 }
 
 //Get all Expense category
-exports.getAllExpense = async (req, res) => {
+export const getAllExpense = async (req, res) => {
     const userId = req.user.id;
 
     try{
@@ -40,7 +40,7 @@ exports.getAllExpense = async (req, res) => {
 };
 
 //Download Excel
-exports.downloadExpenseExcel = async (req, res) => {
+export const downloadExpenseExcel = async (req, res) => {
     const userId = req.user.id;
     try{
         const expense = await Expense.find({userId}).sort({date: -1});
@@ -63,7 +63,7 @@ exports.downloadExpenseExcel = async (req, res) => {
 }
 
 //Delete Expense category
-exports.deleteExpense = async (req, res) => {
+export const deleteExpense = async (req, res) => {
     try{
         await Expense.findByIdAndDelete(req.params.id);
         res.json({message: "Expense Deleted Successfully"});

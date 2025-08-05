@@ -7,7 +7,7 @@ const generateToken = (id) => {
 };
 
 //Register user
-exports.registerUser = async (req, res) => {
+export const registerUser = async (req, res) => {
     const {fullName, email, password, profileImageUrl} = req.body;
 
     //Validation: Check for missing fields
@@ -41,7 +41,7 @@ exports.registerUser = async (req, res) => {
 };
 
 //Login user
-exports.loginUser = async (req, res) => {
+export const loginUser = async (req, res) => {
     const {email, password} = req.body;
 
     if(!email || !password) {
@@ -64,7 +64,7 @@ exports.loginUser = async (req, res) => {
 };
 
 //Get user info
-exports.getUserInfo = async (req, res) => {
+export const getUserInfo = async (req, res) => {
     try{
         const user = await User.findById(req.user.id).select("-password");
 

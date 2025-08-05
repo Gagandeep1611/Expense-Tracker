@@ -3,7 +3,7 @@ import Expense from "../models/Expense.js";
 import { isValidObjectId, Types } from "mongoose";
 
 //Dashboard Data
-exports.getDashboardData = async (req, res) => {
+export const getDashboardData = async (req, res) => {
     try{
         const userId = req.user.id;
         const userObjectId = new Types.ObjectId(String(userId));
