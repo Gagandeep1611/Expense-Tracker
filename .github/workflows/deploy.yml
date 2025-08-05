@@ -1,8 +1,10 @@
 name: 🚀 Temporary Deploy to EC2
 
 on:
-  workflow_dispatch:  # manual trigger only
-
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+  
 jobs:
   deploy:
     runs-on: ubuntu-latest
