@@ -36,7 +36,7 @@ cd expense-tracker
 ```
 ### 2️⃣ Build and run with Docker Compose
 
-docker-compose up frontend-prod
+``` docker-compose up frontend-prod ```
 
 ### 📦 Folder Structure
 .
