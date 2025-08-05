@@ -10,3 +10,4 @@ export default defineConfig({
     port: 5173,
   },
 })
+//Host required for the web application to be accessed from anywhere. 
