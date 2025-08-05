@@ -49,6 +49,6 @@ services:
       - backend-prod
 
 
-  networks:
-    default:
-      name: expense-network
+networks:
+  default:
+    name: expense-network
