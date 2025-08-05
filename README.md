@@ -38,9 +38,3 @@ cd expense-tracker
 
 ``` docker-compose up frontend-prod ```
 
-### 📦 Folder Structure
-.
-├── backend/         # Express API + MongoDB connection
-├── frontend/        # React + Vite frontend
-├── docker-compose.yml
-└── README.md
