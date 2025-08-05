@@ -1,6 +1,6 @@
-const Income = require("../models/Income");
-const Expense = require("../models/Expense");
-const {isValidObjectId, Types} = require("mongoose");
+import Income from "../models/Income.js";
+import Expense from "../models/Expense.js";
+import { isValidObjectId, Types } from "mongoose";
 
 //Dashboard Data
 exports.getDashboardData = async (req, res) => {

@@ -1,7 +1,6 @@
-const User = require("../models/User");
-const Income = require("../models/Income");
-const xlsx = require('xlsx');
-
+import User from "../models/User.js";
+import Income from "../models/Income.js";
+import xlsx from "xlsx";
 //Add income source
 exports.addIncome = async (req, res) => {
     const userId = req.user.id;

@@ -1,12 +1,13 @@
-const express = require("express");
-const {protect} = require("../middleware/authMiddleware");
-const {
-    registerUser,
-    loginUser,
-    getUserInfo,
-} = require("../controllers/authController");
+import express from "express";
+import { protect } from "../middleware/authMiddleware.js";
+import {
+  registerUser,
+  loginUser,
+  getUserInfo,
+} from "../controllers/authController.js";
 
-const upload = require("../middleware/uploadMiddleware");
+import upload from "../middleware/uploadMiddleware.js";
+
 const router = express.Router();
 
 router.post("/register", registerUser);

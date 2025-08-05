@@ -1,12 +1,12 @@
-const express = require("express");
-const{
+import express from "express";
+import {
     addIncome, 
     getAllIncome,
     deleteIncome,
     downloadIncomeExcel
-} = require("../controllers/incomeController");
+} from "../controllers/incomeController.js";
 
-const {protect} = require("../middleware/authMiddleware");
+import { protect } from "../middleware/authMiddleware.js";
 
 const router = express.Router();
 

@@ -1,6 +1,6 @@
-const User = require("../models/User");
-const Expense = require("../models/Expense");
-const xlsx = require('xlsx');
+import User from "../models/User.js";
+import Expense from "../models/Expense.js";
+import xlsx from "xlsx";
 
 //Add expense category
 exports.addExpense = async (req, res) => {
