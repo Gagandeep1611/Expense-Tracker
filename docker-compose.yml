@@ -10,6 +10,8 @@ services:
       - NODE_ENV=development
     env_file:
       - ./backend/.env
+    networks:
+      - default
 
   frontend-dev:
     build:
@@ -22,6 +24,8 @@ services:
       - REACT_APP_API_URL=http://backend-dev:8000
     depends_on:
       - backend-dev
+    networks:
+      - default
 
   backend-prod:
     container_name: backend-prod
@@ -35,6 +39,8 @@ services:
       - NODE_ENV=production
     env_file:
       - ./backend/.env
+    networks:
+      - default
 
   frontend-prod:
     build:
@@ -49,7 +55,8 @@ services:
       - REACT_APP_API_URL=http://backend-prod:8000
     depends_on:
       - backend-prod
-
+    networks:
+      - default
 
 networks:
   default:
