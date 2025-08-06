@@ -21,10 +21,11 @@ jobs:
 
       - name: Build and Push Docker Images
         run: |
-          docker build -t ${{ secrets.DOCKER_USERNAME }}/expense-frontend:latest ./frontend
-          docker build -t ${{ secrets.DOCKER_USERNAME }}/expense-backend:latest ./backend
+          docker build -f frontend/Dockerfile.frontend -t ${{ secrets.DOCKER_USERNAME }}/expense-frontend:latest ./frontend
+          docker build -f backend/Dockerfile.backend -t ${{ secrets.DOCKER_USERNAME }}/expense-backend:latest ./backend
           docker push ${{ secrets.DOCKER_USERNAME }}/expense-frontend:latest
           docker push ${{ secrets.DOCKER_USERNAME }}/expense-backend:latest
+
 
       - name: SSH into EC2 and pull latest Docker images
         uses: appleboy/ssh-action@v1.0.0
