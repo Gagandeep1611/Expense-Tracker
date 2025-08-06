@@ -37,5 +37,5 @@ jobs:
             cd /home/ubuntu/expense-tracker
             docker pull ${{ secrets.DOCKER_USERNAME }}/expense-frontend:latest
             docker pull ${{ secrets.DOCKER_USERNAME }}/expense-backend:latest
-            docker compose down
-            docker compose up -d
+            docker-compose down
+            docker-compose up -d
