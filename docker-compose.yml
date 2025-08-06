@@ -29,5 +29,5 @@ services:
       - expense-network
 
 networks:
-  default:
-    name: expense-network
+  expense-network:
+    driver: bridge
