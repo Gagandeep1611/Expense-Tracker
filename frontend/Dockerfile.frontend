@@ -1,21 +1,3 @@
-#Development Stage
-#Node base image
-FROM node:22.17.1-alpine as dev
-
-#Set working directory 
-WORKDIR /app
-
-#Copy package.json and package-lock.json
-COPY frontend/package*.json ./
-RUN npm install
-
-#COPY all files to container
-COPY frontend/ .
-
-#Start app in dev
-CMD ["npm", "start"]
-
-#-------------------------
 #Build stage
 #Node base image
 FROM node:22.17.1-alpine as build
