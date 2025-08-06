@@ -41,6 +41,6 @@ jobs:
             docker run -d --name frontend-prod -p 5173:5173 ${{ secrets.DOCKER_USERNAME }}/expense-frontend:latest
             docker run -d \
             --name backend-prod \
-            --env-file /home/ec2-user/expense-tracker/.env \
+            --env-file /home/ubuntu/expense-tracker/.env \
             -p 8000:8000 \
             ${{ secrets.DOCKER_USERNAME }}/expense-backend:latest
